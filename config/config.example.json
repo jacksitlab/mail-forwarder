@@ -1,0 +1,15 @@
+{
+    "sender": {
+        "host": "smtp.example.com",
+        "port": 465,
+        "email": "my.email.address@example.com",
+        "username": "my-username",
+        "password": "my-password",
+        "secure": true
+    },
+    "server": {
+        "host": "localhost",
+        "port": 1025
+    },
+    "log":"DEBUG"
+}

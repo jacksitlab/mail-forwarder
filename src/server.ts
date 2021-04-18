@@ -1,5 +1,5 @@
 import * as process from 'process';
-import MailForwardConfig from './models/config';
+import MailForwardConfig, { IMailForwardConfig } from './models/config';
 import { IMail } from './models/mail';
 import { logService } from './services/logService';
 import MailServer, { MailCallback } from './services/mailServer';
@@ -10,12 +10,12 @@ const LOG = logService.getLog('MailForwardServer');
 
 class MailForwardServer implements MailCallback {
 
-    private config: MailForwardConfig;
+    private config: IMailForwardConfig;
     private mailService: MailService;
     private mailServer: MailServer;
 
     public constructor(filename: string) {
-        this.config = new MailForwardConfig(filename);
+        this.config = MailForwardConfig.load(filename);
         this.mailService = new MailService(this.config.sender);
         this.mailServer = new MailServer(this.config.server, this);
     }

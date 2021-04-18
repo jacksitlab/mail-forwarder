@@ -1,4 +1,4 @@
-import MailForwardConfig, { SMTPServerConfig } from "../models/config";
+import MailForwardConfig, { ISMTPServerConfig } from "../models/config";
 import { logService } from "./logService";
 import * as smtp from 'smtp-server'
 import * as parser from 'mailparser'
@@ -12,10 +12,10 @@ export interface MailCallback {
 
 class MailServer {
 
-    private readonly config: SMTPServerConfig;
+    private readonly config: ISMTPServerConfig;
     private readonly server: smtp.SMTPServer;
     private readonly cb: MailCallback;
-    public constructor(config: SMTPServerConfig, onMailReceivedCallback: MailCallback) {
+    public constructor(config: ISMTPServerConfig, onMailReceivedCallback: MailCallback) {
         this.config = config;
         this.cb = onMailReceivedCallback;
         this.server = new smtp.SMTPServer({

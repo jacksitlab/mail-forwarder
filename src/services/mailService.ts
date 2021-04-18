@@ -1,4 +1,4 @@
-import { SMTPConfig } from "../models/config";
+import { ISMTPConfig } from "../models/config";
 import * as nodemailer from 'nodemailer';
 import { logService } from "./logService";
 import Mail = require("nodemailer/lib/mailer");
@@ -7,8 +7,8 @@ const LOG = logService.getLog('MailService');
 class MailService {
     private static readonly RESETPASSWORD_SUBJECT = "forgot your password";
     private static readonly REGISTERED_SUBJECT = "welcome";
-    private readonly config: SMTPConfig;
-    public constructor(config: SMTPConfig) {
+    private readonly config: ISMTPConfig;
+    public constructor(config: ISMTPConfig) {
         this.config = config;
     }
 

@@ -5,6 +5,7 @@ export interface ISMTPConfig {
     host: string;
     port: number;
     email: string;
+    fromName?: string;
     username: string;
     password: string;
     secure: boolean;

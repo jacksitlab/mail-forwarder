@@ -3,6 +3,7 @@
         "host": "smtp.example.com",
         "port": 465,
         "email": "my.email.address@example.com",
+        "fromName":"My Example Service",
         "username": "my-username",
         "password": "my-password",
         "secure": true

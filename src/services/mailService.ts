@@ -36,7 +36,7 @@ class MailService {
             let content: { html?: string, text?: string } = mail.isHtml ? { html: mail.content } : { text: mail.content };
             transporter.sendMail({
                 ...{
-                    from: { name: "", address: this.config.email }, // sender address
+                    from: { name: this.config.fromName || "", address: this.config.email }, // sender address
                     to: mail.to, // list of receivers
                     subject: mail.subject, // Subject line
                 },

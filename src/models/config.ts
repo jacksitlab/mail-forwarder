@@ -12,7 +12,7 @@ export interface ISMTPConfig {
 }
 
 export interface ISMTPServerConfig {
-    host: string;
+    host?: string;
     port: number;
 }
 
